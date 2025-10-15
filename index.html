@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Philadelphia Basketball</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Philadelphia Basketball</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="men.html">Men's Schedules</a>
+      <a href="women.html">Women's Schedules</a>
+      <a href="allgames.html">All Games</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Image Section -->
+<section class="featured-image">
+  <img src="images/hero-philly-map.png" alt="Philadelphia Basketball Map" />
+</section>
+
+<!-- Intro Section -->
+<section class="intro-text">
+  <h2>Background</h2>
+  <p>
+    Philadelphia has the greatest basketball scene in the country. 
+    Big 5. PCL. Tons of D2/D3. Opportunities to watch basketball are endless. 
+    <br><br>
+    The purpose of this site is to compile all the local college games 
+    as well as some high school games, so you always know where you can 
+    catch a live basketball game in the Philadelphia area, without
+    having to browse the apps/websites for all the teams. Just click
+    the events you want to attend, and copy it to your personal calendar. 
+    <br><br>
+    Note: I'll try to be on top of any updates for schedule changes, 
+    but I'd recommend—especially for D3/High School—to double check
+    the athletic websites before driving to the gym in case there were any last-minute changes. 
+  </p>
+</section>
+
+
+  <!-- Schools Included Section -->  
+  <main>
+    <section class="schools fade-in">
+      <h2>School List</h2>
+  
+      <div class="school-columns stacked-layout">
+        <!-- Row 1: Division I -->
+        <div class="school-column wide">
+          <h3>Division I</h3>
+          <ul>
+            <li>Drexel</li>
+            <li>La Salle</li>
+            <li>Penn</li>
+            <li>Temple</li>
+            <li>Saint Joseph’s</li>
+            <li>Villanova</li>
+          </ul>
+        </div>
+  
+        <!-- Row 2 Left: Division II & III -->
+        <div class="school-column">
+          <h3>Division II & III</h3>
+          <ul>
+            <li>Arcadia University</li>
+            <li>Bryn Mawr College</li>
+            <li>Chestnut Hill College</li>
+            <li>Eastern University</li>
+            <li>Gwynedd Mercy University</li>
+            <li>Harcum College</li>
+            <li>Haverford College</li>
+            <li>Holy Family University</li>
+            <li>Immaculata University</li>
+            <li>Jefferson University</li>
+            <li>Neumann University</li>
+            <li>Rosemont College</li>
+            <li>Penn State Brandywine</li>
+            <li>Swarthmore College</li>
+            <li>Ursinus College</li>
+            <li>West Chester University</li>
+            <li>Widener University</li>
+          </ul>
+        </div>
+  
+        <!-- Row 2 Right: High Schools -->
+        <div class="school-column">
+          <h3>High Schools</h3>
+          <ul>
+            <li>Archbisop Carroll</li>
+            <li>Archbishop Ryan</li>
+            <li>Archbisop Wood</li>
+            <li>Bonner & Prendie</li>
+            <li>Cardinal O'Hara</li>
+            <li>Conwell-Egan</li>
+            <li>Devon Prep</li>
+            <li>Father Judge</li>
+            <li>Lansdale Catholic</li>
+            <li>La Salle College</li>
+            <li>Neumann-Goretti</li>
+            <li>Roman Catholic</li>
+            <li>St. Joseph's Prep</li>
+            <li>West Catholic</li>
+            <li>Select Public School 6A Games</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+
+  <!-- Fade-in Script -->
+  <script>
+    // Automatically fade in elements on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeElements = document.querySelectorAll('.fade-in, .fade-in-on-load');
+      fadeElements.forEach(el => {
+        setTimeout(() => el.classList.add('visible'), 100);
+      });
+    });
+  </script>
+</body>
+</html>
+``

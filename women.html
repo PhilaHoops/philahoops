@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Women's Basketball Schedules</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-section="women">
+  <header>
+    <h1>Philadelphia Basketball</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="men.html">Men's Schedules</a>
+      <a href="women.html" class="active">Women's Schedules</a>
+      <a href="allgames.html">All Games</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Women's Basketball Schedules</h2>
+    <div class="tabs">
+      <div class="tab-header">
+        <button class="tab-button active" data-tab="women-d1">Division I</button>
+        <button class="tab-button" data-tab="women-d2-d3">Division II & III</button>
+        <button class="tab-button" data-tab="women-highschool">High School</button>
+        <a id="downloadLink" class="download-btn" href="#" download>Download Schedule</a>
+      </div>
+
+      <div id="women-d1" class="tab-content active">
+        <iframe src="https://calendar.google.com/calendar/embed?src=381d0fada664fa6b607046c8e224d30f0ff26622e3a2917ec72f43738a862dfc%40group.calendar.google.com&ctz=America%2FNew_York" 
+                style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div id="women-d2-d3" class="tab-content">
+        <iframe src="https://calendar.google.com/calendar/embed?src=ad9153c354af605dd00ed7493a939acde2892c49fd99e4cf7dd6dc51b9f6879a%40group.calendar.google.com&ctz=America%2FNew_York" 
+                style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div id="women-highschool" class="tab-content">
+        <iframe src="https://calendar.google.com/calendar/embed?src=f745b72fc20a1bdb11bcf7473237e0982a633050abd28ace4fcfbf3b85cb77c1%40group.calendar.google.com&ctz=America%2FNew_York" 
+                style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Men's Basketball Schedules</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-section="men">
+  <header>
+    <h1>Philadelphia Basketball</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="men.html" class="active">Men's Schedules</a>
+      <a href="women.html">Women's Schedules</a>
+      <a href="allgames.html">All Games</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Men's Basketball Schedules</h2>
+
+    <section class="tabs">
+      <div class="tab-header">
+        <button class="tab-button active" data-tab="men-d1">Division I</button>
+        <button class="tab-button" data-tab="men-d2-d3">Division II & III</button>
+        <button class="tab-button" data-tab="men-highschool">High School</button>
+        <a id="downloadLink" class="download-btn" href="#" download>Download Schedule</a>
+      </div>
+
+      <div id="men-d1" class="tab-content active">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=1661233b921ddceb27a519e4fa6cd3bed02f28ed3ed927d289138c1bb2589fc4%40group.calendar.google.com&ctz=America%2FNew_York"
+          style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div id="men-d2-d3" class="tab-content">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=444396be61916fa3d37f70c12ddc067979aa09d3c2fa92497b571cec2ecfe178%40group.calendar.google.com&ctz=America%2FNew_York"
+          style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div id="men-highschool" class="tab-content">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=29e0e9268461fd6438f7618eb3851c3c1f778c4810c5cdd00cc78a25ee0b46b0%40group.calendar.google.com&ctz=America%2FNew_York"
+          style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </section>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Philadelphia Basketball</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Philadelphia Basketball</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="men.html">Men's Schedules</a>
+      <a href="women.html">Women's Schedules</a>
+      <a href="allgames.html">All Games</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <main class="contact fade-in">
+    <h2>Contact</h2>
+    <p>
+      If you have any questions, or if I'm missing a school that you want added to the schedule, let me know! 
+      I've also created a subreddit to talk all things Philly hoops. 
+    </p>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:philadelphiaballwatchers@gmail.com">philadelphiaballwatchers@gmail.com</a></p>
+      <p><strong>Reddit:</strong> <a href="https://twitter.com/phillyhoops" target="_blank">Philadelphia Hoops Reddit Page</a></p>
+    </div>
+  </main>
+
+  <!-- Script for fade-in animation -->
+  <script>
+    const fadeElems = document.querySelectorAll('.fade-in');
+
+    const appearOptions = { threshold: 0.1 };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    fadeElems.forEach(elem => appearOnScroll.observe(elem));
+  </script>
+</body>
+</html>

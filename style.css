@@ -1,0 +1,640 @@
+/* Reset & Base */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #003366; /* navy */
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.75rem;
+  font-weight: bold;
+}
+
+nav a.active,
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  z-index: 2;
+}
+
+.hero-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-overlay p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  line-height: 1.8;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Hero Text Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Layout */
+main {
+  padding: 1.5rem;
+}
+
+/* Tabs */
+.tabs {
+  margin-top: 1rem;
+}
+
+.tab-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  background: #e0e0e0;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.tab-button.active {
+  background: #003366;
+  color: white;
+}
+
+.download-btn {
+  margin-left: auto;
+  background: #004080;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.download-btn:hover {
+  background: #0055aa;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Highlight animation */
+.tab-content.highlight {
+  animation: fadeHighlight 0.8s ease-in-out;
+}
+
+@keyframes fadeHighlight {
+  0% { background-color: rgba(255, 235, 59, 0.3); }
+  100% { background-color: transparent; }
+}
+
+/* Pulse effect for download button */
+#downloadLink.pulse {
+  animation: pulseAnim 0.6s ease-in-out;
+}
+
+@keyframes pulseAnim {
+  0%   { transform: scale(1); background-color: var(--pulse-start); }
+  50%  { transform: scale(1.1); background-color: var(--pulse-mid); }
+  100% { transform: scale(1); background-color: var(--pulse-end); }
+}
+
+/* Men’s theme */
+body[data-section="men"] {
+  --pulse-start: #003366;
+  --pulse-mid: #0055aa;
+  --pulse-end: #003366;
+}
+
+/* Women’s theme */
+body[data-section="women"] {
+  --pulse-start: #b0d6f7;
+  --pulse-mid: #7fbce8;
+  --pulse-end: #b0d6f7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tab-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .download-btn {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .hero-overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Schools Section */
+.schools {
+  padding: 3rem 1.5rem;
+  background: #f5f7fa;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #003366;
+}
+
+.schools h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.schools h3 {
+  margin-top: 2rem;
+  color: #002244;
+  border-left: 4px solid #003366;
+  padding-left: 10px;
+}
+
+.schools ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+  line-height: 1.8;
+}
+
+/* Fade-in Animations */
+.fade-in,
+.fade-in-on-load {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* When visible */
+.fade-in.visible,
+.fade-in-on-load.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-overlay h2 {
+    font-size: 1.5rem;
+  }
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay only the title */
+.hero-title-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-title-overlay h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Intro section below hero */
+.intro {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  color: #003366;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .hero-title-overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+    margin: 2rem auto;
+  }
+}
+/* Hero Section (Full-screen style) */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* fills most of the screen */
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the area */
+  object-position: center;
+  display: block;
+  filter: brightness(0.85); /* darken slightly for better contrast */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+}
+
+/* Heading and Paragraph styling */
+.hero-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-overlay p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-overlay {
+    padding: 1.5rem;
+  }
+
+  .hero-overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+}
+
+/* Centered Image Section */
+.featured-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+  max-width: 1000px;
+  padding: 1rem;
+}
+
+.featured-image img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+
+/* Intro Text */
+.intro-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+  color: #003366;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .featured-image {
+    margin: 2rem auto;
+  }
+
+  .intro-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text p {
+    font-size: 1rem;
+  }
+}
+
+.school-columns.three-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.school-column {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.school-column h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  font-size: 1.1em;
+}
+
+.school-column ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+.school-column li {
+  margin: 5px 0;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .school-columns.three-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Layout: D1 full width on top, D2/D3 + HS side by side below */
+.school-columns.stacked-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-areas:
+    "d1 d1"
+    "d2d3 hs";
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* Assign grid areas */
+.school-column.wide {
+  grid-area: d1;
+}
+
+.school-column:nth-of-type(2) {
+  grid-area: d2d3;
+}
+
+.school-column:nth-of-type(3) {
+  grid-area: hs;
+}
+
+/* Shared box styling */
+.school-column {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  color: #003366;
+}
+
+.school-column h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.school-column ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+.school-column li {
+  margin: 5px 0;
+}
+
+/* Responsive stacking for smaller screens */
+@media (max-width: 768px) {
+  .school-columns.stacked-layout {
+    grid-template-areas:
+      "d1"
+      "d2d3"
+      "hs";
+  }
+}
+
+/* Layout: D1 full width on top, D2/D3 + HS side by side below */
+.school-columns.stacked-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-areas:
+    "d1 d1"
+    "d2d3 hs";
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* Assign grid areas */
+.school-column.wide {
+  grid-area: d1;
+}
+
+.school-column:nth-of-type(2) {
+  grid-area: d2d3;
+}
+
+.school-column:nth-of-type(3) {
+  grid-area: hs;
+}
+
+/* Shared box styling */
+.school-column {
+  background: #fafafa;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  color: #003366;
+  text-align: left; /* left align text */
+}
+
+.school-column h3 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 1.25em;
+}
+
+/* Bulleted list */
+.school-column ul {
+  list-style-type: disc; /* enable bullets */
+  margin-left: 1.5rem;
+  padding-left: 0;
+}
+
+.school-column li {
+  margin: 6px 0;
+}
+
+/* Responsive stacking for smaller screens */
+@media (max-width: 768px) {
+  .school-columns.stacked-layout {
+    grid-template-areas:
+      "d1"
+      "d2d3"
+      "hs";
+  }
+}
+
+/* Ensure the schools container does not force center alignment */
+.schools {
+  text-align: left;    /* reset any centering on parent */
+}
+
+/* Column boxes should left-align their text */
+.school-column {
+  text-align: left;
+}
+
+/* Make lists look like normal bulleted lists and align nicely */
+.school-column ul {
+  list-style-type: disc;
+  margin: 0 0 0 1.25rem; /* left indent for bullets */
+  padding: 0;
+  text-align: left;      /* explicit for the ul as well */
+}
+
+/* If you want the headings left-aligned too */
+.school-column h3 {
+  text-align: left;
+}
