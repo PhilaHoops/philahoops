@@ -7,19 +7,21 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
+/* === HEADER === */
 header {
-  background: #003366; /* navy */
+  background: #003366;
   color: white;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: center;           /* Vertically center title + icon */
+  justify-content: space-between; /* Keep title left, hamburger right */
+  position: relative;
+  z-index: 1000;
 }
 
 header h1 {
-  margin: 0;
   font-size: 1.5rem;
+  margin: 0;
 }
 
 nav {
@@ -638,3 +640,410 @@ body[data-section="women"] {
 .school-column h3 {
   text-align: left;
 }
+
+/* === RESET === */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === HEADER === */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #003366;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+header.scrolled {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: #002244;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* === NAVIGATION === */
+.nav-menu {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/*.nav-menu a:hover {
+  color: #66b3ff;
+  transform: translateY(-2px);
+}
+
+.nav-menu a.active {
+  color: #66b3ff;
+  border-bottom: 2px solid #66b3ff;
+  padding-bottom: 2px;
+}
+
+/* === MOBILE NAV TOGGLE === */
+.nav-toggle {
+  display: none;
+  width: 1.75rem;
+  height: 1.25rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.nav-toggle .bar {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* === MOBILE STYLES === */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #002244;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-toggle.open .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(6px);
+  }
+
+  .nav-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-6px);
+  }
+}
+
+
+
+/* === HEADER SCROLL EFFECT === */
+header.scrolled {
+  background-color: rgba(0, 34, 68, 0.98);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+
+/* === CONTENT SECTIONS === */
+.featured-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+  max-width: 1000px;
+  padding: 1rem;
+}
+
+.featured-image img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.intro-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+  color: #003366;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* === SCHOOL SECTION === */
+.schools {
+  padding: 3rem 1.5rem;
+  background: #f5f7fa;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #003366;
+}
+
+.school-columns.stacked-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-areas:
+    "d1 d1"
+    "d2d3 hs";
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.school-column.wide {
+  grid-area: d1;
+}
+
+.school-column:nth-of-type(2) {
+  grid-area: d2d3;
+}
+
+.school-column:nth-of-type(3) {
+  grid-area: hs;
+}
+
+.school-column {
+  background: #fafafa;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  color: #003366;
+  text-align: left;
+}
+
+.school-column h3 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 1.25em;
+  text-align: left;
+}
+
+.school-column ul {
+  list-style-type: disc;
+  margin: 0 0 0 1.25rem;
+  padding: 0;
+  text-align: left;
+}
+
+.school-column li {
+  margin: 6px 0;
+}
+
+@media (max-width: 768px) {
+  .school-columns.stacked-layout {
+    grid-template-areas:
+      "d1"
+      "d2d3"
+      "hs";
+  }
+}
+
+@media (max-width: 768px) {
+  .school-columns {
+    grid-template-columns: 1fr;      /* stack columns */
+    text-align: center;              /* center text */
+    justify-items: center;
+  }
+
+  .school-column {
+    width: 100%;
+    max-width: 320px;                /* optional: keeps it nicely narrow */
+  }
+
+  .school-column ul {
+    text-align: left;                /* keeps bullet alignment natural */
+    margin: 0 auto;
+    display: inline-block;           /* centers the list itself */
+  }
+}
+
+
+/* === FIX MOBILE HEADER LAYOUT === */
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: center;          /* center title overall */
+    align-items: center;
+    padding: 1rem 1.25rem;
+    position: relative;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+    text-align: center;
+    flex: 1;                          /* let it stay centered */
+  }
+
+  .nav-toggle {
+    display: flex;
+    position: absolute;
+    right: 1rem;                      /* keep it right-aligned */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #002244;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+}
+
+/* ========= MOBILE SAFE FIX (place at VERY END of style.css) ========= */
+
+/* make sizing predictable site-wide */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* avoid any accidental horizontal scrolling */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure school container uses the full available width but with side padding */
+.schools {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+/* Make sure nested grid respects container width */
+.school-columns,
+.school-columns.stacked-layout,
+.school-columns.three-col {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+
+/* Narrow device adjustments */
+@media (max-width: 520px) {
+
+  /* stack into a single column and center content */
+  .school-columns,
+  .school-columns.stacked-layout,
+  .school-columns.three-col {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    justify-items: center;
+    padding: 0;
+  }
+
+  /* each card will fill the content area but leave side gutters */
+  .school-column {
+    width: 100% !important;
+    max-width: 420px;        /* keeps it narrower on small phones */
+    margin: 0 auto !important;
+    padding: 14px 16px !important; /* smaller inner padding */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+
+  /* keep lists readable and not full-width */
+  .school-column ul {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    text-align: left;
+  }
+
+  /* slightly larger vertical spacing between stacked cards */
+  .school-columns > .school-column + .school-column {
+    margin-top: 10px;
+  }
+}
+
+/* Extra safeguard: images, iframes, embeds should never exceed container width */
+img, iframe, .calendar-frame, embed, video {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .intro-text {
+    margin-bottom: 1.5rem;
+  }
+
+  .schools {
+    margin-top: 0.75rem;
+  }
+}
+
+/* === CALENDAR EMBEDS === */
+iframe {
+  width: 100%;
+  max-width: 1200px;  /* keeps it tidy on huge screens */
+  height: 800px;
+  border: none;
+  display: block;
+  margin: 0 auto; /* centers the calendar on large screens */
+}
+
+/* Adjust height for smaller screens */
+@media (max-width: 768px) {
+  iframe {
+    height: 600px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  iframe {
+    height: 500px;
+  }
+}
+
