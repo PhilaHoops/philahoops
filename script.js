@@ -60,4 +60,30 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-  
+ 
+  // === NAVIGATION TOGGLE ===
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+const header = document.querySelector('header');
+
+navToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('open');
+  navToggle.classList.toggle('open');
+});
+
+// === STICKY HEADER EFFECT ===
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+// === FADE-IN ELEMENTS ON LOAD ===
+document.addEventListener('DOMContentLoaded', () => {
+  const fadeElements = document.querySelectorAll('.fade-in, .fade-in-on-load');
+  fadeElements.forEach(el => {
+    setTimeout(() => el.classList.add('visible'), 100);
+  });
+});
